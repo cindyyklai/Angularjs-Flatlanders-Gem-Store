@@ -5,6 +5,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script type="text/javascript" src="products.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="angular-translate.min.js"></script>
+    <script type="text/javascript" src="angular-translate-loader-static-files.min.js"></script>
     <style media="screen">
         body {
             width: 700px;
@@ -17,14 +19,17 @@
 <!--  Store Header  -->
 <header>
     <h1 class="text-center">Flatlander Crafted Gems</h1>
-    <h2 class="text-center">– an Angular store –</h2>
+    <h2 class="text-center">- an Angular store -</h2>
 </header>
+
+
+<language-selector></language-selector>
 
 <!--  Products Container  -->
 <div class="list-group">
     <!--  Product Container  -->
     <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+        <h3>{{ product.name | translate }} <em class="pull-right">{{product.price | currency}}</em></h3>
 
         <!-- Image Gallery  -->
         <product-gallery></product-gallery>
